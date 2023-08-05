@@ -1,0 +1,24 @@
+[tasks.format]
+install_crate = "rustfmt"
+command = "cargo"
+args = ["fmt", "--", "--emit=files"]
+
+[tasks.wasm]
+command = "wasm-pack"
+args = ["build", "--target=web", "--debug", "--no-default-features", "--features=hydrate"]
+
+[tasks.tailwind]
+command = "C:\\Program Files\\nodejs\\npx.cmd"
+args = ["tailwindcss", "-i", "input.css", "-o", "pkg/tailwind.css"]
+
+[tasks.build]
+command = "cargo"
+args = ["build"]
+dependencies = ["wasm"]
+
+[tasks.movies]
+dependencies = [
+    "format",
+    "tailwind",
+    "build"
+]
