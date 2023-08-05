@@ -2,3 +2,4 @@
 /node_modules
 /pkg
 /.vscode
+configuration/production.yaml

@@ -28,8 +28,16 @@ actix-files = { version = "0.6", optional = true }
 actix-web = { version = "4", features = ["macros"], optional = true }
 futures = { version = "0.3", optional = true }
 simple_logger = { version = "4.0", optional = true }
+reqwest = { version = "0.11.18", features = ["json"], optional = true}
+config = {version = "0.13", optional = true}
+url-escape = {version = "0.1.1", optional = true}
 log = "0.4"
 env_logger = "0.10.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = {versuib = "1.0.104"}
+
+
+
 
 [features]
 default = ["csr"]
@@ -53,6 +61,9 @@ ssr = [
   "leptos/ssr",
   "leptos_meta/ssr",
   "leptos_router/ssr",
+  "dep:reqwest",
+  "dep:config",
+  "dep:url-escape",
   "dep:leptos_actix",
   "dep:actix-web",
   "dep:actix-files",

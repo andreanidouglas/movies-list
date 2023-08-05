@@ -1,6 +1,8 @@
 use leptos::*;
 use leptos_meta::{provide_meta_context, Stylesheet};
 
+use crate::components::search::SearchBar;
+
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
     provide_meta_context(cx);
@@ -11,6 +13,8 @@ pub fn App(cx: Scope) -> impl IntoView {
             <h1>
                 "Hello World1"
             </h1>
+
+            <SearchBar />
         </div>
     }
 }

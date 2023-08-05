@@ -1,5 +1,8 @@
 use cfg_if::cfg_if;
 mod components;
+mod configuration;
+mod data;
+
 cfg_if! {
 if #[cfg(feature = "hydrate")] {
 
